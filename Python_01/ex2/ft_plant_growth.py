@@ -13,18 +13,18 @@ class Plant:
     def display_status(self):
         print(f"{self.name}: {self.height}cm, {self.age_days} days old")
 
+
 def main():
-    print("=== Garden Plant Growth")
+    print("=== Garden Plant Growth ===")
     rose = Plant("Rose", 25.0, 30)
     rose.display_status()
     initial_height = rose.height
-    
-    for day in range(1,8):
+    for day in range(1, 8):
         rose.grow()
         rose.age()
         print(f"=== Day {day} ===")
         rose.display_status()
-    
+
     growth_week = round(rose.height - initial_height, 1)
     print(f"Growth this week: {growth_week}cm")
 
