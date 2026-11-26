@@ -118,6 +118,7 @@ class Tree(Plant):
     ) -> None:
         super().__init__(name, height, age_days)
         self.trunk_diameter = float(trunk_diameter)
+        self._stats: Tree._TreeStats = self._create_stats()
 
     def _create_stats(self) -> "_TreeStats":
         return Tree._TreeStats()
@@ -127,8 +128,7 @@ class Tree(Plant):
             f"Tree {self.name} now produces a shade of "
             f"{self.height}cm long and {self.trunk_diameter}cm wide."
         )
-        stats: Tree._TreeStats = self._stats
-        stats.record_shade()
+        self._stats.record_shade()
 
     def show(self) -> None:
         super().show()
